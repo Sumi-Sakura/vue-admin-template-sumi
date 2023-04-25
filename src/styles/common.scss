@@ -1,0 +1,15 @@
+.search-table {
+  .operate-button-container {
+    margin-bottom: 18px;
+    text-align: right;
+  }
+  .pagination-container {
+    margin-top: 18px;
+    text-align: center;
+  }
+  .popconfirm-container + .el-button,
+  .el-button + .popconfirm-container,
+  .popconfirm-container + .popconfirm-container {
+    margin-left: 10px;
+  }
+}
