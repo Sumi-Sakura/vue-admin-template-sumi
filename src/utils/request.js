@@ -14,22 +14,22 @@ const service = axios.create({
 
 // 请求拦截器
 service.interceptors.request.use(
-  config => {
+  (config) => {
     if (store.getters.token) {
       // 让每个请求都携带 token
       config.headers['userToken'] = getToken()
     }
     return config
   },
-  error => {
+  (error) => {
     console.log(error)
     return Promise.reject(error)
-  }
+  },
 )
 
 // 请求拦截器
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data
 
     // 如果返回的
@@ -43,15 +43,11 @@ service.interceptors.response.use(
       // 50008: 非法登录; 50012: 其他用户登录; 50014: token 过期;
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
         // 重新登录
-        MessageBox.confirm(
-          '您已经被登出, 您可以取消留在该页面，或重新登录',
-          '确认登出吗',
-          {
-            confirmButtonText: '重新登录',
-            cancelButtonText: '取消',
-            type: 'warning',
-          }
-        ).then(() => {
+        MessageBox.confirm('您已经被登出, 您可以取消留在该页面，或重新登录', '确认登出吗', {
+          confirmButtonText: '重新登录',
+          cancelButtonText: '取消',
+          type: 'warning',
+        }).then(() => {
           store.dispatch('user/resetToken').then(() => {
             location.reload()
           })
@@ -62,7 +58,7 @@ service.interceptors.response.use(
       return res
     }
   },
-  error => {
+  (error) => {
     console.log('err' + error)
     Message({
       message: error.message,
@@ -70,7 +66,7 @@ service.interceptors.response.use(
       duration: 5 * 1000,
     })
     return Promise.reject(error)
-  }
+  },
 )
 
 export default service

@@ -5,24 +5,21 @@
         v-for="provinceOption in provinceOptions"
         :key="provinceOption.value"
         :label="provinceOption.label"
-        :value="provinceOption.value"
-      />
+        :value="provinceOption.value" />
     </el-select>
     <el-select v-model="selectedCity" placeholder="请选择市" @change="selectCity">
       <el-option
         v-for="cityOption in cityOptions"
         :key="cityOption.value"
         :label="cityOption.label"
-        :value="cityOption.value"
-      />
+        :value="cityOption.value" />
     </el-select>
     <el-select v-model="selectedArea" placeholder="请选择区" @change="selectArea">
       <el-option
         v-for="areaOption in areaOptions"
         :key="areaOption.value"
         :label="areaOption.label"
-        :value="areaOption.value"
-      />
+        :value="areaOption.value" />
     </el-select>
   </div>
 </template>
@@ -49,54 +46,72 @@ export default {
       selectedProvince: '',
       selectedCity: '',
       selectedArea: '',
-      provinceOptions: [{
-        value: '选项1',
-        label: '黄金糕',
-      }, {
-        value: '选项2',
-        label: '双皮奶',
-      }, {
-        value: '选项3',
-        label: '蚵仔煎',
-      }, {
-        value: '选项4',
-        label: '龙须面',
-      }, {
-        value: '选项5',
-        label: '北京烤鸭',
-      }],
-      cityOptions: [{
-        value: '选项1',
-        label: '黄金糕',
-      }, {
-        value: '选项2',
-        label: '双皮奶',
-      }, {
-        value: '选项3',
-        label: '蚵仔煎',
-      }, {
-        value: '选项4',
-        label: '龙须面',
-      }, {
-        value: '选项5',
-        label: '北京烤鸭',
-      }],
-      areaOptions: [{
-        value: '选项1',
-        label: '黄金糕',
-      }, {
-        value: '选项2',
-        label: '双皮奶',
-      }, {
-        value: '选项3',
-        label: '蚵仔煎',
-      }, {
-        value: '选项4',
-        label: '龙须面',
-      }, {
-        value: '选项5',
-        label: '北京烤鸭',
-      }],
+      provinceOptions: [
+        {
+          value: '选项1',
+          label: '黄金糕',
+        },
+        {
+          value: '选项2',
+          label: '双皮奶',
+        },
+        {
+          value: '选项3',
+          label: '蚵仔煎',
+        },
+        {
+          value: '选项4',
+          label: '龙须面',
+        },
+        {
+          value: '选项5',
+          label: '北京烤鸭',
+        },
+      ],
+      cityOptions: [
+        {
+          value: '选项1',
+          label: '黄金糕',
+        },
+        {
+          value: '选项2',
+          label: '双皮奶',
+        },
+        {
+          value: '选项3',
+          label: '蚵仔煎',
+        },
+        {
+          value: '选项4',
+          label: '龙须面',
+        },
+        {
+          value: '选项5',
+          label: '北京烤鸭',
+        },
+      ],
+      areaOptions: [
+        {
+          value: '选项1',
+          label: '黄金糕',
+        },
+        {
+          value: '选项2',
+          label: '双皮奶',
+        },
+        {
+          value: '选项3',
+          label: '蚵仔煎',
+        },
+        {
+          value: '选项4',
+          label: '龙须面',
+        },
+        {
+          value: '选项5',
+          label: '北京烤鸭',
+        },
+      ],
     }
   },
   created() {

@@ -7,11 +7,10 @@
       :show-file-list="false"
       :on-success="handleAvatarSuccess"
       :before-upload="beforeAvatarUpload"
-      :http-request="chooseImage"
-    >
-      <img v-if="imageUrl" :src="imageUrl" class="avatar">
+      :http-request="chooseImage">
+      <img v-if="imageUrl" :src="imageUrl" class="avatar" />
       <div v-else>
-        <i class="el-icon-plus avatar-uploader-icon" />
+        <i class="el-icon-plus avatar-uploader-icon"></i>
         <!-- <a-icon :type="imgLoading ? 'loading' : 'plus'" /> -->
         <div>{{ uploadText }}</div>
       </div>
@@ -25,8 +24,7 @@
           center-box
           :fixed="fixed"
           :can-move="false"
-          :fixed-number="cutFixed"
-        />
+          :fixed-number="cutFixed" />
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="isCropperDialogShow = false">取消</el-button>
@@ -129,17 +127,17 @@ export default {
     // 选择裁剪的图片
     chooseImage(obj) {
       this.isCropperDialogShow = true
-      this.getBase64(obj.file, imageUrl => {
+      this.getBase64(obj.file, (imageUrl) => {
         this.cropperImg = imageUrl
       })
     },
     // 裁剪并上传
     cutImg() {
-      this.$refs.cropper.getCropData(data => {
+      this.$refs.cropper.getCropData((data) => {
         const imgBlob = this.convertBase64UrlToBlob(data)
         const submitData = new FormData()
         submitData.append('file', imgBlob, this.imgName)
-        this.uploadRequest(submitData).then(res => {
+        this.uploadRequest(submitData).then((res) => {
           this.imageUrl = res.data[0].imgUrl
           this.$emit('uploadSuccess', res)
           this.isCropperDialogShow = false

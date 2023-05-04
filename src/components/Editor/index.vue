@@ -1,6 +1,10 @@
 <template>
   <div style="border: 1px solid #ccc">
-    <Toolbar style="border-bottom: 1px solid #ccc" :editor="editor" :default-config="toolbarConfig" :mode="mode" />
+    <Toolbar
+      style="border-bottom: 1px solid #ccc"
+      :editor="editor"
+      :default-config="toolbarConfig"
+      :mode="mode" />
     <Editor
       v-model="html"
       style="overflow-y: hidden"
@@ -8,8 +12,7 @@
       :default-config="editorConfig"
       :mode="mode"
       @onChange="onChange"
-      @onCreated="onCreated"
-    />
+      @onCreated="onCreated" />
   </div>
 </template>
 

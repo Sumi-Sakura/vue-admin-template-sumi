@@ -3,8 +3,8 @@ import Vue from 'vue'
 import SvgIcon from '@/components/SvgIcon'
 
 // 全局注册 SvgIcon 组件
-Vue.component('svg-icon', SvgIcon)
+Vue.component('SvgIcon', SvgIcon)
 
 const req = require.context('./svg', false, /\.svg$/)
-const requireAll = requireContext => requireContext.keys().map(requireContext)
+const requireAll = (requireContext) => requireContext.keys().map(requireContext)
 requireAll(req)

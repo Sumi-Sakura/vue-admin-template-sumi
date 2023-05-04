@@ -5,14 +5,15 @@
       :action="uploadApi"
       :show-file-list="false"
       :on-success="uploadSuccess"
-      :before-upload="validateUpload"
-    >
-      <img v-if="imageUrl" :src="imageUrl" class="image">
+      :before-upload="validateUpload">
+      <img v-if="imageUrl" :src="imageUrl" class="image" />
       <div v-else>
-        <i class="el-icon-plus image-uploader-icon" />
+        <i class="el-icon-plus image-uploader-icon"></i>
       </div>
     </el-upload>
-    <div v-if="proportion.length > 0">请上传比例为{{ proportion[0] }}:{{ proportion[1] }}的图片</div>
+    <div v-if="proportion.length > 0">
+      请上传比例为{{ proportion[0] }}:{{ proportion[1] }}的图片
+    </div>
   </div>
 </template>
 
@@ -74,7 +75,10 @@ export default {
             const image = new Image()
             image.src = reader.result
             image.onload = () => {
-              if (image.naturalWidth / image.naturalHeight !== this.proportion[0] / this.proportion[1]) {
+              if (
+                image.naturalWidth / image.naturalHeight !==
+                this.proportion[0] / this.proportion[1]
+              ) {
                 this.$message.error('请上传正确比例的图片')
                 return reject(false)
               } else {

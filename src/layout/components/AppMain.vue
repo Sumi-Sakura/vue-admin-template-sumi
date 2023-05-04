@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .app-main {
   /*50 = navbar  */
   min-height: calc(100vh - $menuHeight);

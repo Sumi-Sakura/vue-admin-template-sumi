@@ -14,7 +14,7 @@ NProgress.configure({ showSpinner: false })
 // 无重定向白名单
 const whiteList = ['/login']
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // 进度条开始
   NProgress.start()
 
