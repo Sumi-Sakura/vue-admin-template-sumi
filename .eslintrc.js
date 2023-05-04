@@ -1,8 +1,9 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     sourceType: 'module',
+    requireConfigFile: false,
   },
   env: {
     browser: true,
@@ -20,14 +21,33 @@ module.exports = {
         singleline: 10,
         multiline: {
           max: 1,
-          allowFirstLine: false,
         },
+      },
+    ],
+    'vue/multi-word-component-names': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
       },
     ],
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
-    'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/no-v-html': 'off',
+    'vue/html-indent': 0,
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'never',
+      },
+    ],
     'accessor-pairs': 2,
     'arrow-spacing': [
       2,
@@ -76,7 +96,7 @@ module.exports = {
       2,
       2,
       {
-        SwitchCase: 1,
+        SwitchCase: 2,
       },
     ],
     'jsx-quotes': [2, 'prefer-single'],
@@ -230,7 +250,7 @@ module.exports = {
       },
     ],
     'space-before-blocks': [2, 'always'],
-    'space-before-function-paren': [2, 'never'],
+    'space-before-function-paren': 0,
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 2,
     'space-unary-ops': [
