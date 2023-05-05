@@ -21,6 +21,8 @@
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "regenerator-runtime": "^0.13.11",
+    "simplebar": "^6.2.5",
+    "simplebar-vue": "^2.3.3",
     "svg-baker-runtime": "^1.4.7",
     "vue": "2.6.10",
     "vue-router": "3.0.6",
