@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .app-main {
   /*50 = navbar  */
-  min-height: calc(100vh - $menuHeight);
+  min-height: calc(100vh - #{$menuheight});
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -29,7 +29,7 @@ export default {
   }
 }
 .fixed-header + .app-main {
-  padding-top: $menuHeight;
+  padding-top: #{$menuheight};
 }
 </style>
 
