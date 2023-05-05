@@ -96,7 +96,7 @@ module.exports = {
       2,
       2,
       {
-        SwitchCase: 2,
+        SwitchCase: 1,
       },
     ],
     'jsx-quotes': [2, 'prefer-single'],
