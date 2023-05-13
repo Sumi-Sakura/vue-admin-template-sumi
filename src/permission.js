@@ -55,7 +55,7 @@ router.beforeEach(async (to, from, next) => {
           Message.error(error || '请重新登录')
 
           // 跳转到登录页并记录重定向url
-          next(`/login?redirect=${to.path}`)
+          next(`/login?redirect=${to.fullPath}`)
           NProgress.done()
         }
       }
@@ -68,7 +68,7 @@ router.beforeEach(async (to, from, next) => {
     } else {
       next()
       // 访问任何不存在于白名单的页面时跳转到登录页并记录重定向url
-      next(`/login?redirect=${to.path}`)
+      next(`/login?redirect=${to.fullPath}`)
       NProgress.done()
     }
   }
